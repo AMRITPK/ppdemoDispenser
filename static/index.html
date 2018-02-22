@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+ 
+  
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Self Shopee11</title>
+
+    <!-- Bootstrap core CSS -->
+
+	
+	
+	
+	    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/heroic-features.css" rel="stylesheet">
+
+   <script  src="//www.paypalobjects.com/api/checkout.js"></script>
+   <script src="vendor/jquery/jquery.min.js"></script>
+   
+   
+   
+   
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Self Shopee</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Jumbotron Header -->
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="pics/item1.png" alt="Pepsi">
+	  <div class="carousel-caption">
+		<h3>Pepsi</h3>
+		<p>Buy a pepsi can now!</p>
+		<a href="#items" ><button class="btn btn-primary" >Buy</button>  </a>
+	</div>
+    </div>
+    <div class="carousel-item">
+      <img src="pics/item2.png" alt="Coke">
+	   <div class="carousel-caption">
+		<h3>Coke</h3>
+		<p>Buy a coke can now!</p>
+		<a href="#items" ><button class="btn btn-primary" >Buy</button>  </a>
+	</div>
+    </div>
+    <div class="carousel-item">
+      <img src="pics/item3.png" alt="Fanta">
+	   <div class="carousel-caption">
+		<h3>Fanta</h3>
+		<p>Buy a fanta can now!</p>
+		<a href="#items" ><button class="btn btn-primary" >Buy</button> </a>
+	</div>
+    </div>
+	    <div class="carousel-item">
+      <img src="pics/item1.png" alt="Fanta">
+	   <div class="carousel-caption">
+		<h3>item4</h3>
+		<p>Buy a item4 can now!</p>
+		<a href="#items" ><button class="btn btn-primary" >Buy</button> </a>
+	</div>
+    </div>
+	    <div class="carousel-item">
+      <img src="pics/item2.png" alt="Fanta">
+	   <div class="carousel-caption">
+		<h3>item5</h3>
+		<p>Buy a item5 can now!</p>
+		<a href="#items" ><button class="btn btn-primary" >Buy</button> </a>
+	</div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+      <!-- Page Features -->
+	
+
+
+<div id="items" class="card">
+
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img class="card-img-top" src="pics/1.png" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Pepsi</h4>
+              <p class="card-text">300 ml pepsi with good offer</p>
+            </div>
+            <div class="card-footer">
+        	  
+ 
+
+ <select class="btn btn-primary" id="sel1" class="dropdown">
+  <option value="0" selected>0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4" >4</option>
+</select> 
+
+<div id="total1" class="btn"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img class="card-img-top" src="pics/2.png" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Mazaa</h4>
+              <p class="card-text">500ml Mazaa with recyclable bottle</p>
+            </div>
+            <div class="card-footer">
+              
+			   <select class="btn btn-primary" id="sel2" class="dropdown">
+  <option value="0" selected>0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select> 
+<div id="total2" class="btn"></div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img class="card-img-top" src="pics/3.png" alt="">
+            <div class="card-body">
+              <h4 class="card-title">Coke</h4>
+              <p class="card-text">Diet coke 300 ml</p>
+            </div>
+            <div class="card-footer">
+ <select class="btn btn-primary" id="sel3" class="dropdown">
+  <option value="0" selected>0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select> 
+<div id="total3" class="btn"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img class="card-img-top" src="pics/4.png" alt="">
+            <div class="card-body">
+              <h4 class="card-title">appy Fizz</h4>
+              <p class="card-text">Appy fizz caltron</p>
+            </div>
+            <div class="card-footer">
+               <select class="btn btn-primary" id="sel4" class="dropdown">
+  <option value="0" selected>0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+</select>
+<div id="total4" class="btn"></div>
+            </div>
+          </div>
+        </div>
+   <div class="col-lg-3 col-md-6 mb-4">
+          <div class="card">
+            <img class="card-img-top" src="pics/3.png" alt="">
+            <div class="card-body">
+              <h4 class="card-title">item5</h4>
+              <p class="card-text">item5 with good offer</p>
+            </div>
+            <div class="card-footer">
+        	  
+ 
+
+ <select class="btn btn-primary" id="sel5" class="dropdown">
+  <option value="0" selected>0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4" >4</option>
+</select> 
+
+<div id="total5" class="btn"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+	  
+	  </div>
+      <!-- /.row -->
+	
+<table>
+<tbody>
+                 
+              
+  
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td><h3>Total</h3></td>
+                        <td class="text-right"><h3><strong><div id="total"></div></strong></h3></td>
+                    </tr>
+					
+					<tr>
+						<td>   </td>
+                        <td>   </td>
+         
+                        <td   id="msg" style="color:red" class="hidden error" ><strong><a style="margin-left:300px">Please choose quantity</a></strong></td>
+                    </tr>					
+                    <tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>
+                      
+                        <td>
+                      <div  id="paymentMethods"></div>
+					  </td>
+                    </tr>   
+					<tr>
+                        <td>   </td>
+                        <td>   </td>
+                        <td>   </td>
+                    
+                    </tr>
+					
+</tbody>
+</table>			 
+			 
+
+<br/>
+    
+	
+	
+	
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    
+<script type="text/javascript">
+     
+
+      function queryStringToJSON(queryString) {
+		  if(queryString.indexOf('?') > -1){
+		    queryString = queryString.split('?')[1];
+		  }
+		  var pairs = queryString.split('&');
+		  var result = {};
+		  pairs.forEach(function(pair) {
+		    pair = pair.split('=');
+		    result[pair[0]] = decodeURIComponent(pair[1] || '');
+		  });
+		  return result;
+		}
+
+
+    
+   </script>
+ 
+ 	 <script>
+	 console.log(queryStringToJSON("TOKEN=EC-7CW37048NR8715720&TIMESTAMP=2018-02-22T13:46:11Z&CORRELATIONID=b0a5913f417e2&ACK=Success&VERSION=204.0&BUILD=43715881"));
+	 
+	 
+	 var availableCount=[];
+		$.get( "/available", function( data ) {
+				console.log(data);
+				//var items=JSON.parse(data);
+				console.log(data.items);
+				availableCount=data.items;
+				//alert( "Load was performed." );
+		});
+	 var count1=0;
+	 var count2=0;
+	 var count3=0;
+	 var count4=0;
+	 var count5=0;
+	 var total=0;
+	   function isValid() {
+			
+				
+			if(total>0 && count1 <= availableCount[0] && count2 <= availableCount[1] && count3 <= availableCount[2] &&count4 <= availableCount[3]&&count5 <= availableCount[4])
+				{
+					//document.querySelector('#msg').style.display ="false";
+					return true;
+				}
+			else
+			return false;
+        
+    }
+	  function toggleValidationMessage() {
+        document.querySelector('#msg').style.display = (isValid() ? 'none' : 'block');
+    }
+	function toggleButton(actions) {
+        return isValid() ? actions.enable() : actions.disable();
+    }
+	
+	
+	function updater(){
+				
+				 count1=$("#sel1").val();
+				 count2=$("#sel2").val();
+				 count3=$("#sel3").val();
+				 count4=$("#sel4").val();
+				 count5=$("#sel5").val();
+				total=count1*8+count2*9+count3*13+count4*15+count5*20;
+				$("#total").html(total+" Rs");
+				$("#total1").html(count1*8+" Rs");
+				$("#total2").html(count2*9+" Rs");
+				$("#total3").html(count3*13+" Rs");
+				$("#total4").html(count4*15+" Rs");
+				$("#total5").html(count5*20+" Rs");
+				
+				if(count1> availableCount[0]){
+					alert("maximum available is "+availableCount[0]);
+					$("#sel1").val(availableCount[0]);
+					updater();
+				}if(count2> availableCount[1]){
+					alert("maximum available is "+availableCount[1]);
+					$("#sel2").val(availableCount[1]);
+					updater();
+				}if(count3> availableCount[2]){
+					alert("maximum available is "+availableCount[2]);
+					$("#sel3").val(availableCount[2]);
+					updater();
+				}if(count4> availableCount[3]){
+					alert("maximum available is "+availableCount[3]);
+					$("#sel4").val(availableCount[3]);
+					updater();
+				}if(count5> availableCount[4]){
+					alert("maximum available is "+availableCount[4]);
+					$("#sel5").val(availableCount[4]);
+					updater();
+				}
+				
+	}
+ function onChangeCheckbox(handler) {
+        document.querySelector('#sel1').addEventListener('change', handler);
+        document.querySelector('#sel2').addEventListener('change', handler);
+        document.querySelector('#sel3').addEventListener('change', handler);
+        document.querySelector('#sel4').addEventListener('change', handler);
+        document.querySelector('#sel5').addEventListener('change', handler);
+    }
+	
+        paypal.Button.render({
+
+            env: 'sandbox', // Or 'production',
+
+            commit: false, // Show a 'Pay Now' button
+		
+		  validate: function(actions) {
+  //        toggleButton(actions);
+
+
+            onChangeCheckbox(function() {
+				updater();
+	            toggleButton(actions);
+				toggleValidationMessage();
+            });
+  
+  },
+
+       // onClick: function() {
+        //  toggleValidationMessage();  
+        //},
+            payment: function() {
+                // Set up the payment here
+                // 1. call your server side method or api to intiate the paymnets
+                var data = {
+                	"description" : count1+","+count2+","+count3+","+count4+","+count5,
+                	"shipping":"0",
+                	"tax":"0",
+                	"shipping_discount":"0",
+                	"total":total,
+                	"currency":"USD",
+                	"intent":"sale",
+                	"subtotal":total,
+                	"name":"items",
+                	"price":total,
+                	"quantity":"1",
+                	"handling_fee" : "0",
+                	"insurance":"0",
+                	"customFlag" :false
+                }
+				
+				
+				
+                	return paypal.request({
+						method: 'post',
+						url: '/CreatePayment',
+						json: data
+					})
+					.then(function(res) {
+						console.log(res);
+						var json = queryStringToJSON(res);
+						return json.TOKEN;
+					}); 
+				
+             	
+            },
+            onAuthorize: function(data, actions) {
+            	// Set up a url on your server to execute the payment
+				var EXECUTE_URL = 'ExecutePayments';
+			   
+	                
+	          		var data1 = {
+                	"description" : count1+","+count2+","+count3+","+count4+","+count5,
+                	"shipping":"0",
+                	"tax":"0",
+                	"shipping_discount":"0",
+                	"total":total,
+                	"currency":"USD",
+                	"intent":"sale",
+                	"subtotal":total,
+                	"name":"items",
+                	"price":total,
+                	"quantity":"1",
+                	"handling_fee" : "0",
+                	"insurance":"0",
+                	"customFlag" :false,
+					"paymentToken": data.paymentToken,
+		                	"payerID": data.payerID
+                }
+	                	   //alert("asdf");
+	                	 //  $('.loader').show()
+	                	   return paypal.request({
+	       				    method: 'post',
+	       				    url: 'ExecutePayments',
+	       				    json: data1
+		       				}).then(function(res) {
+									console.log(res);
+		       				   var json = queryStringToJSON(res);
+							   console.log(json);
+		                           if(json.ACK == "Success"){
+								   
+										window.location.href="successPayment?token="+json.TOKEN+"&startCounts="+availableCount.join(",")+"&counts="+count1+","+count2+","+count3+","+count4+","+count5;
+			                       }else{
+										alert("payment failed");
+								   }
+		       			       }).catch(function(err){
+		       						alert(err);
+		       				}); 
+           
+           },
+          	 onCancel: function(data, actions) {
+          			return actions.redirect();
+				}
+
+
+        }, '#paymentMethods');
+    </script>
+ 
+
+    
+ 
+  </body>
+
+</html>

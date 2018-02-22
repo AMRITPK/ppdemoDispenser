@@ -1,0 +1,186 @@
+<!html>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!------ Include the above in your HEAD tag ---------->
+		<script src="https://code.jquery.com/jquery.js"></script>
+		
+		<script> 
+		
+		  function queryStringToJSON(queryString) {
+			  if(queryString.indexOf('?') > -1){
+			    queryString = queryString.split('?')[1];
+			  }
+			  var pairs = queryString.split('&');
+			  var result = {};
+			  pairs.forEach(function(pair) {
+			    pair = pair.split('=');
+			    result[pair[0]] = decodeURIComponent(pair[1] || '');
+			  });
+			  return result;
+			}
+
+			$( document ).ready(function() {
+				var nowTime=new Date().toLocaleDateString();
+			$("#nowTime").html(nowTime);
+				$("#show_transactions").hide(); // hide the contents on load
+				function qs(key) {
+				    key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, "\\$&"); // escape RegEx meta chars
+				    var match = location.search.match(new RegExp("[?&]"+key+"=([^&]+)(&|$)"));
+				    return match && decodeURIComponent(match[1].replace(/\+/g, " "));
+				}
+				var token = qs("token");
+				var payerID = qs("payerID");
+				var counts = qs("counts");
+				var countsarr=counts.split(",");
+				var initCount=qs("startCounts").split(",");
+				//$("#itemDetils").html("Pepsi="+countsarr[0]+", Maaza="+countsarr[1]+", Coke="+countsarr[2]+", Appy="+countsarr[3]);
+					$("#count1").html(countsarr[0]);
+					$("#count2").html(countsarr[1]);
+					$("#count3").html(countsarr[2]);
+					$("#count4").html(countsarr[3]);
+					$("#count5").html(countsarr[4]);
+
+					$("#amount1").html(countsarr[0]*8);
+					$("#amount2").html(countsarr[1]*9);
+					$("#amount3").html(countsarr[2]*13);
+					$("#amount4").html(countsarr[3]*15);
+					$("#amount5").html(countsarr[4]*20);
+				var total=countsarr[0]*8+countsarr[1]*9+countsarr[2]*13+countsarr[3]*15+countsarr[4]*20;
+				$("#total").html(total);
+				$.post("successPayment?token="+token+"&payerID="+payerID, function( data ) {
+					  
+					  	data = queryStringToJSON(data);
+					  	
+					  	if(data.ACK="Success")
+
+						//$("#shipToName").html(data.SHIPTONAME);
+						//$("#shipToStreet").html(data.SHIPTOSTREET + ", " + data.SHIPTOSTREET2);
+						//$("#shipToCity").html(data.SHIPTOCITY);
+						//$("#shipToState").html(data.SHIPTOSTREET);
+						//$("#shipToZip").html(data.SHIPTOZIP);
+						$("#transactionId").html(data.TRANSACTIONID);
+						//$("#transactionType").html(data.intent);
+						$("#amt").html(data.AMT);
+						$("#currencyCode").html(data.CURRENCYCODE);
+						$("#paymentStatus").html(data.ACK);
+						//$("#paymentType").html(data.payer.payment_method);
+						$(".loader").hide();
+						$("#show_transactions").show()
+						//setTimeout (function(){check();},10000)
+						
+				});
+				
+				
+	
+				
+				function redirect(){
+				//alert("Boom!");
+				
+					document.getElementById('link').click();
+				}
+				//setTimeout(explode, 5000);
+
+			});
+		</script> 
+<div class="container">
+    <div class="row">
+        <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <address>
+                        <strong>Elf Cafe</strong>
+                        <br>
+                        2135 Sunset Blvd
+                        <br>
+                        Los Angeles, CA 90026
+                        <br>
+                        <abbr title="Phone">P:</abbr> (213) 484-6829
+                    </address>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 text-right">
+                    <p>
+                        <em id="nowTime"></em>
+                    </p>
+                    <p>
+                        <em>Receipt #: 34522677W</em>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <h1>Receipt</h1>
+                </div>
+                </span>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>#</th>
+                            <th class="text-center">Price</th>
+                            <th class="text-center">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-md-9"><em>Baked Rodopa Sheep Feta</em></h4></td>
+                            <td class="col-md-1" style="text-align: center" id="count1">  </td>
+                            <td class="col-md-1 text-center">8</td>
+                            <td class="col-md-1 text-center" id="amount1"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-9"><em>Lebanese Cabbage Salad</em></h4></td>
+                            <td class="col-md-1" style="text-align: center" id="count2">  </td>
+                            <td class="col-md-1 text-center">9</td>
+                            <td class="col-md-1 text-center" id="amount2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-9"><em>Baked Tart with Thyme and Garlic</em></h4></td>
+                            <td class="col-md-1" style="text-align: center" id="count3">  </td>
+                            <td class="col-md-1 text-center">13</td>
+                            <td class="col-md-1 text-center" id="amount3"></td>
+                        </tr>
+						<tr>
+                            <td class="col-md-9"><em>Baked Tart </em></h4></td>
+                            <td class="col-md-1" style="text-align: center" id="count4">  </td>
+                            <td class="col-md-1 text-center">15</td>
+                            <td class="col-md-1 text-center" id="amount4"></td>
+                        </tr>
+          <tr>
+                            <td class="col-md-9"><em>item5 </em></h4></td>
+                            <td class="col-md-1" style="text-align: center" id="count5">  </td>
+                            <td class="col-md-1 text-center">20</td>
+                            <td class="col-md-1 text-center" id="amount5"></td>
+                        </tr>
+          
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td class="text-right"><h4><strong>Total: </strong></h4></td>
+                            <td class="text-center text-danger" id="amt"><h4><strong></strong></h4></td>
+                        </tr>   
+						<tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td class="text-right"><h4><strong>Payment Status: </strong></h4></td>
+                            <td class="text-center text-danger" id="paymentStatus"><h4><strong></strong></h4></td>
+                        </tr>
+                    </tbody>
+                </table>
+               </td>
+            </div>
+			<div style="display:hidden"> <strong>Click <a id="link" href='/'>here </a> to return to Home Page</strong></div>
+			<div id="status">
+				Items dispensed successfully 
+			</div>
+        </div>
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	
+</html>	
