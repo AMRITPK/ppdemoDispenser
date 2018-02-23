@@ -7,9 +7,9 @@ def applicationConfig():
 
 	_jsonSandBox = {
 	
-		"USER" :"muru_sgbus_api1.pp.com",
-		"PWD" :"TBXQWJTU9RFEVPPG",
-		"SIGNATURE" :"AFcWxV21C7fd0v3bYYYRCpSSRl31ALsxBva-lMS-1Q0ty2DhT7QBTKYd",
+		"USER" :"muru_inbus2_api1.pp.com",
+		"PWD" :"HWFAHB4A5VMXMTAQ",
+		"SIGNATURE" :"AZxbwZ9bPVPFFf7hCCNemacLJwlCAKRzFzVvZSZUS1yuvmA5epyyo8bo",
 		"URL" :"https://api-3t.sandbox.paypal.com/nvp",
 		"BN_CODE":"PP-DemoPortal-EC-JSV4-python",
 		"VERSION":"204.0",
