@@ -94,18 +94,37 @@
 							}else{
 								var itemNames=["apple","orange","mange","sdfa","asdfasdf"];
 								var message="";
-								var differenceCount=[];
+								var dispensedCount=[];
+								var notDispensedCount=[];
 								for (var index in availableCount ){
 									console.log(index,"aaaaaaaaaaa");
-									differenceCount[index]=availableCount[index]-expectedCount[index];
-									if(differenceCount[index]!=0){
-										message+="item "+itemNames[index]+" not dispensed; difference= "+differenceCount[index]+"</br>";
+									dispensedCount[index]=availableCount[index]-expectedCount[index];
+									notDispensedCount[index]=countsarr[index]-dispensedCount[index]
+									if(dispensedCount[index]!=0){
+										message+="item "+itemNames[index]+" not dispensed; difference= "+dispensedCount[index]+"</br>";
 									
 									}
 								}
+								
+							$("#disp1").html(dispensedCount[0]);
+							$("#disp2").html(dispensedCount[1]);
+							$("#disp3").html(dispensedCount[2]);
+							$("#disp4").html(dispensedCount[3]);
+							$("#disp5").html(dispensedCount[4]);
+					
+					$("#refund1").html(notDispensedCount[0]*8);
+					$("#refund2").html(notDispensedCount[1]*9);
+					$("#refund3").html(notDispensedCount[2]*13);
+					$("#refund4").html(notDispensedCount[3]*15);
+					$("#refund5").html(notDispensedCount[4]*20);
+					
+					var totalRef=notDispensedCount[0]*8+notDispensedCount[1]*9+notDispensedCount[2]*13+notDispensedCount[3]*15+notDispensedCount[4]*20;
+					$("#amtRefund").html(totalRef);
+				
+				
 								alert("dispense error");
-								$("#dispensedMessage").html("not dispensed yet .. ... ..."+differenceCount.toString());
-								$("#dispensedMessage1").html(message+"</br> amount will be refunded");
+								//$("#dispensedMessage").html("not dispensed yet .. ... ..."+dispensedCount.toString());
+								$("#dispensedMessage1").html(totalRef+" will be refunded");
 							}
 						//}
 					
@@ -155,41 +174,53 @@
                     <thead>
                         <tr>
                             <th>Product</th>
-                            <th>#</th>
+                            <th>Ordered#</th>
+                            <th>Dispensed#</th>
                             <th class="text-center">Price</th>
                             <th class="text-center">Total</th>
+                            <th class="text-center">Refund</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="col-md-9"><em>Baked Rodopa Sheep Feta</em></h4></td>
                             <td class="col-md-1" style="text-align: center" id="count1">  </td>
+                            <td class="col-md-1" style="text-align: center" id="disp1">  </td>
                             <td class="col-md-1 text-center">8</td>
                             <td class="col-md-1 text-center" id="amount1"></td>
+                            <td class="col-md-1 text-center" id="refund1"></td>
                         </tr>
                         <tr>
                             <td class="col-md-9"><em>Lebanese Cabbage Salad</em></h4></td>
                             <td class="col-md-1" style="text-align: center" id="count2">  </td>
+                            <td class="col-md-1" style="text-align: center" id="disp2">  </td>
                             <td class="col-md-1 text-center">9</td>
                             <td class="col-md-1 text-center" id="amount2"></td>
+                            <td class="col-md-1 text-center" id="refund2"></td>
                         </tr>
                         <tr>
                             <td class="col-md-9"><em>Baked Tart with Thyme and Garlic</em></h4></td>
                             <td class="col-md-1" style="text-align: center" id="count3">  </td>
+                            <td class="col-md-1" style="text-align: center" id="disp3">  </td>
                             <td class="col-md-1 text-center">13</td>
                             <td class="col-md-1 text-center" id="amount3"></td>
+                            <td class="col-md-1 text-center" id="refund3"></td>
                         </tr>
 						<tr>
                             <td class="col-md-9"><em>Baked Tart </em></h4></td>
                             <td class="col-md-1" style="text-align: center" id="count4">  </td>
+                            <td class="col-md-1" style="text-align: center" id="disp4">  </td>
                             <td class="col-md-1 text-center">15</td>
                             <td class="col-md-1 text-center" id="amount4"></td>
+                            <td class="col-md-1 text-center" id="refund4"></td>
                         </tr>
           <tr>
                             <td class="col-md-9"><em>item5 </em></h4></td>
                             <td class="col-md-1" style="text-align: center" id="count5">  </td>
+                            <td class="col-md-1" style="text-align: center" id="disp5">  </td>
                             <td class="col-md-1 text-center">20</td>
                             <td class="col-md-1 text-center" id="amount5"></td>
+                            <td class="col-md-1 text-center" id="refund5"></td>
                         </tr>
           
                         <tr>
@@ -197,6 +228,12 @@
                             <td>   </td>
                             <td class="text-right"><h4><strong>Total: </strong></h4></td>
                             <td class="text-center text-danger" id="amt"><h4><strong></strong></h4></td>
+                        </tr>     
+						<tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td class="text-right"><h4><strong>Total Refund: </strong></h4></td>
+                            <td class="text-center text-danger" id="amtRefund"><h4><strong></strong></h4></td>
                         </tr>   
 						<tr>
                             <td>   </td>
